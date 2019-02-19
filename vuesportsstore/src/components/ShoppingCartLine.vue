@@ -42,7 +42,7 @@ export default {
             }
         },
         sendRemoveEvent(){
-            this.$$emit("remove", this.line);
+            this.$emit("remove", this.line);
         }
     }
 }

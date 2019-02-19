@@ -23,7 +23,7 @@ export default {
         },
         removeProduct(state, lineToRemove) {
             let index = state.lines.findIndex(line => line == lineToRemove);
-            if(index > 1){
+            if(index > -1){
                 state.lines.splice(index, 1);
             }
         }
