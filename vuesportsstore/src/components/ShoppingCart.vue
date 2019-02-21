@@ -42,7 +42,7 @@
             <div class="col">
                 <div class="text-center">
                     <router-link to="/" class="btn btn-secondary m-1">
-                        Continue Shoppint
+                        Continue Shopping
                     </router-link>
                     <router-link to="/checkout" class="btn btn-primary m-1"
                         :disabled = "lines.length == 0">
