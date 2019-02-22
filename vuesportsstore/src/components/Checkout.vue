@@ -10,7 +10,8 @@
         <div class="m-2">
             <div class="form-group m-2">
                 <label>Name</label>
-                <input v-model="name" class="form-control" />
+                <input v-model="$v.name.$model" class="form-control" />
+                <validation-error :validation="$v.name" />
             </div>
         </div>
         <div class="text-center">
@@ -25,14 +26,25 @@
 </template>
 
 <script>
+
+import { required } from "vuelidate/lib/validators";
+import ValidationError from "./ValidationError";
+
 export default {
+    components: { ValidationError },
     data: function(){
         return {
             name: null
         }
     },
+    validations: {
+        name: {
+            required
+        }
+    },
     methods: {
         submitOrder(){
+            this.$v.$touch();
             //todo: save order
         }   
     }
