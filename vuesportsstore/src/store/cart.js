@@ -27,21 +27,21 @@ export default {
                 state.lines.splice(index, 1);
             }
         },
-        setCartData(state, data){
+        setCartData(state, data) {
             state.lines = data;
         }
     },
     actions: {
-        loadCartData(context) {
+        loadCardData(context) {
             let data = localStorage.getItem("cart");
-            if(data != null){
+            if(data != null) {
                 context.commit("setCartData", JSON.parse(data));
             }
         },
         storeCartData(context){
             localStorage.setItem("cart", JSON.stringify(context.state.lines));
         },
-        clearCartData(context) {
+        clearCartData(context){
             context.commit("setCartData", []);
         },
         initializeCart(context, store) {
