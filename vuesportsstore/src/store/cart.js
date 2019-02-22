@@ -32,7 +32,7 @@ export default {
         }
     },
     actions: {
-        loadCardData(context) {
+        loadCartData(context) {
             let data = localStorage.getItem("cart");
             if(data != null) {
                 context.commit("setCartData", JSON.parse(data));

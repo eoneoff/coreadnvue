@@ -8,9 +8,6 @@ import { mapActions } from "vuex";
 
 export default {
   name: 'app',
-  /*components: {
-    Store
-  },*/
   methods: {
     ...mapActions({
       getData: "getData",
