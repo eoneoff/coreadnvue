@@ -86,7 +86,7 @@ export default {
             "storeOrder": "storeOrder",
             "clearCart": "cart/clearCardData"
         }),
-        submitOrder(){
+        async submitOrder(){
             this.$v.$touch();
             if(!this.$v.$invalid) {
                 let order = await this.storeOrder(this.order);

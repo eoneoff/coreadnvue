@@ -9,14 +9,14 @@ export default {
     props: ["validation"],
     computed: {
         show(){
-            return this.validation.$dirty && this.validation
+            return this.validation.$dirty && this.validation.$invalid
         },
         messages() {
             let messages = [];
             if (this.validation.$dirty) {
                 if (this.hasValidationError("required")) {
                     messages.push("Please enter a value")
-                } else {
+                } else if (this.hasValidationError("email")){
                     messages.push("Please enter a valid email address");
                 }
             }
